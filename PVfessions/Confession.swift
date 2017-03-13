@@ -12,14 +12,17 @@ import FirebaseDatabase
 
 class Confession {
     var story : String!
-    var postedBy : String!
+    var school : String!
+    var henna : String!
     var key : String!
     var storyRef : FIRDatabaseReference?
     
-    init(key : String = "", story : String, postedBy : String) {
+    init(key : String = "", story : String, school : String, henna : String) {
         self.key = key
         self.story = story
-        self.postedBy = postedBy
+        self.school = school
+        self.henna = henna
+
     }
     
     init(snapshot : FIRDataSnapshot) {
@@ -33,12 +36,18 @@ class Confession {
             self.story = ""
         }
         
-        if let postedBy = snapshot.childSnapshot(forPath: "postedBy").value as? String {
-            self.postedBy = postedBy
+        if let school = snapshot.childSnapshot(forPath: "school").value as? String {
+            self.school = school
         }
         else {
-            self.postedBy = ""
+            self.school = ""
         }
         
+        if let henna = snapshot.childSnapshot(forPath: "henna").value as? String {
+            self.henna = henna
+        }
+        else {
+            self.henna = ""
+        }
     }
 }
