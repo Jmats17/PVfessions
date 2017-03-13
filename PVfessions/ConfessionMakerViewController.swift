@@ -47,6 +47,10 @@ class ConfessionMakerViewController : UIViewController, UIPickerViewDelegate, UI
         return true
     }
     
+    @IBAction func cancel() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         let college = colleges[row]
@@ -65,30 +69,34 @@ class ConfessionMakerViewController : UIViewController, UIPickerViewDelegate, UI
     @IBAction func submit() {
         let schoolChosenIndexValue = pickerView.selectedRow(inComponent: 0)
         let school = colleges[schoolChosenIndexValue]
-        if let text = storyTextView.text {
-            if let textFromTextField = textField.text {
-                let confession = [
-                    "story" : text,
-                    "school" : school,
-                    "henna" : textFromTextField
-                    ] as [String : Any]
-                ref.childByAutoId().setValue(confession)
-                self.dismiss(animated: true, completion: nil)
-            }
-            else {
-                let confession = [
-                    "story" : text,
-                    "school" : school,
-                    "henna" : ""
-                    ] as [String : Any]
-                ref.childByAutoId().setValue(confession)
-                self.dismiss(animated: true, completion: nil)
-            }
-            
+        if storyTextView.text == "" || storyTextView.text == "Enter your story here..." {
+            self.dismiss(animated: true, completion: nil)
         }
         else {
-            
+            if let text = storyTextView.text {
+                if let textFromTextField = textField.text {
+                    let confession = [
+                        "story" : text,
+                        "school" : school,
+                        "henna" : textFromTextField
+                        ] as [String : Any]
+                    ref.childByAutoId().setValue(confession)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                else {
+                    let confession = [
+                        "story" : text,
+                        "school" : school,
+                        "henna" : ""
+                        ] as [String : Any]
+                    ref.childByAutoId().setValue(confession)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            }
         }
+        
+        
         
     }
     

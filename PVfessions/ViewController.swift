@@ -73,7 +73,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let confession = confessions[(indexPath as NSIndexPath).row]
         print(confession)
         cell.storyTextLabel.text = confession.story
-        cell.writtenByLabel.text = "\(confession.school!) - \"\(confession.henna!)\""
+        if confession.henna != "" {
+            cell.writtenByLabel.text = "\(confession.school!) , \"\(confession.henna!)\""
+        }
+        else {
+            cell.writtenByLabel.text = "\(confession.school!), Anonymous"
+        }
 
         return cell
     }
