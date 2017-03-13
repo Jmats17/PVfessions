@@ -28,6 +28,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         refreshControl.tintColor = UIColor.black
         refreshControl!.addTarget(self, action: #selector(ViewController.handleRefresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
         observingDB()
         // Do any additional setup after loading the view, typically from a nib.
     }

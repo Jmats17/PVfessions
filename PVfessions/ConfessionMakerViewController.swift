@@ -26,15 +26,18 @@ class ConfessionMakerViewController : UIViewController, UIPickerViewDelegate, UI
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-        self.submitButton.layer.cornerRadius = 3
-        self.submitButton.layer.borderWidth = 2.0
-        self.submitButton.layer.borderColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0).cgColor
-        self.storyTextView.layer.cornerRadius = 3
-        self.storyTextView.layer.borderWidth = 2.0
+        self.submitButton.layer.cornerRadius = 4
+       
+        self.storyTextView.layer.cornerRadius = 4
+        self.storyTextView.layer.borderWidth = 1.0
         self.storyTextView.layer.borderColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0).cgColor
+        
         self.textField.delegate = self
         self.textField.returnKeyType = .done
+        self.textField.layer.borderWidth = 1.0
+
         self.textField.layer.borderColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0).cgColor
+        
         storyTextView.delegate = self
 
     }
@@ -42,6 +45,12 @@ class ConfessionMakerViewController : UIViewController, UIPickerViewDelegate, UI
     func textFieldShouldReturn(_ textField: UITextField) -> Bool     {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let college = colleges[row]
+        return NSAttributedString(string: college, attributes: [NSForegroundColorAttributeName:UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0)])
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
