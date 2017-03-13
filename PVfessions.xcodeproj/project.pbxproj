@@ -10,6 +10,10 @@
 		4A8C97202796889BE1D51AE5 /* Pods_PVfessionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C8D706FA84A9F08210227A /* Pods_PVfessionsTests.framework */; };
 		5BBAA2ABFBF7F37F492F320C /* Pods_PVfessions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1F750E7F8102F8375BFE47 /* Pods_PVfessions.framework */; };
 		726563293362688D0B6D10C1 /* Pods_PVfessionsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3D11AC79A4C2B82EE5C78C /* Pods_PVfessionsUITests.framework */; };
+		D02AA04C1E76539800786668 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02AA04B1E76539800786668 /* PopupViewController.swift */; };
+		D02AA04E1E765BDE00786668 /* ConfessionMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02AA04D1E765BDE00786668 /* ConfessionMakerViewController.swift */; };
+		D04F16DD1E764DD200377B17 /* ConfessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F16DC1E764DD200377B17 /* ConfessionTableViewCell.swift */; };
+		D04F16E61E76519500377B17 /* Confession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F16E51E76519500377B17 /* Confession.swift */; };
 		D0B0BA681E764442001BA126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B0BA671E764442001BA126 /* AppDelegate.swift */; };
 		D0B0BA6A1E764442001BA126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B0BA691E764442001BA126 /* ViewController.swift */; };
 		D0B0BA6D1E764442001BA126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B0BA6B1E764442001BA126 /* Main.storyboard */; };
@@ -45,6 +49,10 @@
 		9ACEFC9E0E3C06B58EEB3721 /* Pods-PVfessionsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVfessionsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PVfessionsUITests/Pods-PVfessionsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACC208210578211505A83212 /* Pods-PVfessionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVfessionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PVfessionsTests/Pods-PVfessionsTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB3D11AC79A4C2B82EE5C78C /* Pods_PVfessionsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PVfessionsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02AA04B1E76539800786668 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		D02AA04D1E765BDE00786668 /* ConfessionMakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfessionMakerViewController.swift; sourceTree = "<group>"; };
+		D04F16DC1E764DD200377B17 /* ConfessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfessionTableViewCell.swift; sourceTree = "<group>"; };
+		D04F16E51E76519500377B17 /* Confession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Confession.swift; sourceTree = "<group>"; };
 		D0B0BA641E764442001BA126 /* PVfessions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVfessions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B0BA671E764442001BA126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0B0BA691E764442001BA126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +149,10 @@
 			children = (
 				D0B0BA671E764442001BA126 /* AppDelegate.swift */,
 				D0B0BA691E764442001BA126 /* ViewController.swift */,
+				D04F16E51E76519500377B17 /* Confession.swift */,
+				D02AA04B1E76539800786668 /* PopupViewController.swift */,
+				D02AA04D1E765BDE00786668 /* ConfessionMakerViewController.swift */,
+				D04F16DC1E764DD200377B17 /* ConfessionTableViewCell.swift */,
 				D0B0BA6B1E764442001BA126 /* Main.storyboard */,
 				D0B0BA6E1E764442001BA126 /* Assets.xcassets */,
 				D0B0BA701E764442001BA126 /* LaunchScreen.storyboard */,
@@ -453,7 +465,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02AA04C1E76539800786668 /* PopupViewController.swift in Sources */,
 				D0B0BA6A1E764442001BA126 /* ViewController.swift in Sources */,
+				D04F16DD1E764DD200377B17 /* ConfessionTableViewCell.swift in Sources */,
+				D04F16E61E76519500377B17 /* Confession.swift in Sources */,
+				D02AA04E1E765BDE00786668 /* ConfessionMakerViewController.swift in Sources */,
 				D0B0BA681E764442001BA126 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,6 +727,7 @@
 				D0B0BA8E1E764443001BA126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0B0BA8F1E764443001BA126 /* Build configuration list for PBXNativeTarget "PVfessionsTests" */ = {
 			isa = XCConfigurationList;
@@ -719,6 +736,7 @@
 				D0B0BA911E764443001BA126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0B0BA921E764443001BA126 /* Build configuration list for PBXNativeTarget "PVfessionsUITests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +745,7 @@
 				D0B0BA941E764443001BA126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
