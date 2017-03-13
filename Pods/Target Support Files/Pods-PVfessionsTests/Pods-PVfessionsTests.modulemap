@@ -1,0 +1,6 @@
+framework module Pods_PVfessionsTests {
+  umbrella header "Pods-PVfessionsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
