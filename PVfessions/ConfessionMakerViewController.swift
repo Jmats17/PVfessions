@@ -19,7 +19,7 @@ class ConfessionMakerViewController : UIViewController, UIPickerViewDelegate, UI
     @IBOutlet var pickerView : UIPickerView!
     var colleges = ["Penn State", "University of Michigan", "Indiana University",
                     "UPenn","Syracuse University", "UF"]
-    let ref = FIRDatabase.database().reference().child("confessions")
+    let ref = Database.database().reference().child("confessions")
     var schoolChosen : String?
     
     override func viewDidLoad() {
@@ -54,7 +54,7 @@ class ConfessionMakerViewController : UIViewController, UIPickerViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         let college = colleges[row]
-        return NSAttributedString(string: college, attributes: [NSForegroundColorAttributeName:UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0)])
+        return NSAttributedString(string: college, attributes: [NSAttributedStringKey.foregroundColor:UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0)])
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

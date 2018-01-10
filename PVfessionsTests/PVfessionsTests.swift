@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import PVfessions
+import FirebaseCore
 
 class PVfessionsTests: XCTestCase {
     

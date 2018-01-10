@@ -15,7 +15,7 @@ class Confession {
     var school : String!
     var henna : String!
     var key : String!
-    var storyRef : FIRDatabaseReference?
+    var storyRef : DatabaseReference?
     
     init(key : String = "", story : String, school : String, henna : String) {
         self.key = key
@@ -25,7 +25,7 @@ class Confession {
 
     }
     
-    init(snapshot : FIRDataSnapshot) {
+    init(snapshot : DataSnapshot) {
         key = snapshot.key
         storyRef = snapshot.ref
         

@@ -17,14 +17,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var confessions = [Confession]()
     var refreshControl: UIRefreshControl!
     var circle : Confession? = nil
-    var ref : FIRDatabaseReference!
+    var ref : DatabaseReference!
     @IBOutlet var segmentedControl : UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        ref = FIRDatabase.database().reference().child("confessions")
+        ref = Database.database().reference().child("confessions")
         refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.black
         refreshControl!.addTarget(self, action: #selector(ViewController.handleRefresh), for: .valueChanged)
@@ -40,10 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func observingDB() {
-        ref.observe(FIRDataEventType.value, with: { (snapshot) in
+        ref.observe(DataEventType.value, with: { (snapshot) in
             var newConfessions = [Confession]()
             for key in snapshot.children {
-                let confession = Confession(snapshot: key as! FIRDataSnapshot)
+                let confession = Confession(snapshot: key as! DataSnapshot)
                 newConfessions.append(confession)
             }
             self.confessions = []
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
     }
 
-    func handleRefresh() {
+    @objc func handleRefresh() {
         observingDB()
         refreshControl.endRefreshing()
     }
