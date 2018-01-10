@@ -62,23 +62,40 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-LK-ZiJ">
-                                                    <rect key="frame" x="16" y="8" width="343" height="21"/>
+                                                    <rect key="frame" x="16" y="8" width="287" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLB-hn-gme">
+                                                    <rect key="frame" x="311" y="7" width="28" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urz-p2-1kh">
+                                                    <rect key="frame" x="350" y="10" width="17" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="greylike"/>
+                                                    <connections>
+                                                        <action selector="likeTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ldX-Di-Dll"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Dcl-LK-ZiJ" firstAttribute="leading" secondItem="7dV-Gh-75y" secondAttribute="leadingMargin" constant="8" id="1cb-X4-vSN"/>
                                                 <constraint firstItem="Dcl-LK-ZiJ" firstAttribute="top" secondItem="7dV-Gh-75y" secondAttribute="topMargin" id="8Sf-Je-VdY"/>
                                                 <constraint firstItem="Oqz-7W-aai" firstAttribute="leading" secondItem="7dV-Gh-75y" secondAttribute="leadingMargin" constant="8" id="IEA-vH-ckn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Dcl-LK-ZiJ" secondAttribute="trailing" constant="8" id="WlI-eQ-skH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Dcl-LK-ZiJ" secondAttribute="trailing" constant="64" id="WlI-eQ-skH"/>
                                                 <constraint firstItem="Oqz-7W-aai" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dcl-LK-ZiJ" secondAttribute="bottom" constant="15" id="bAi-va-uNB"/>
                                                 <constraint firstItem="Oqz-7W-aai" firstAttribute="bottom" secondItem="7dV-Gh-75y" secondAttribute="bottomMargin" id="eIw-Ap-VUn"/>
                                                 <constraint firstItem="Oqz-7W-aai" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7dV-Gh-75y" secondAttribute="trailingMargin" id="laG-rP-HOL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="likedButton" destination="urz-p2-1kh" id="XPH-JL-D6C"/>
+                                            <outlet property="numOfLikes" destination="BLB-hn-gme" id="Aof-Y7-fl5"/>
                                             <outlet property="storyTextLabel" destination="Dcl-LK-ZiJ" id="z1x-FB-rHq"/>
                                             <outlet property="writtenByLabel" destination="Oqz-7W-aai" id="LhO-aQ-Gjh"/>
                                         </connections>
@@ -97,11 +114,15 @@
                                     <segment title="Most Liked"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EVq-Vp-Ft6"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="segmentedControl" destination="Eoh-Q2-ibr" id="Oa9-PQ-ctt"/>
                         <outlet property="tableView" destination="7iG-f4-aSz" id="cV2-5T-3n9"/>
                     </connections>
                 </viewController>
@@ -195,4 +216,7 @@
             <point key="canvasLocation" x="927.20000000000005" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="greylike" width="25" height="23"/>
+    </resources>
 </document>

@@ -122,6 +122,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D02AA04F1E79A84B00786668 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0B0BA691E764442001BA126 /* ViewController.swift */,
+				D02AA04D1E765BDE00786668 /* ConfessionMakerViewController.swift */,
+				D02AA04B1E76539800786668 /* PopupViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D02AA0501E79A85B00786668 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D04F16E51E76519500377B17 /* Confession.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D02AA0511E79A86000786668 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D04F16DC1E764DD200377B17 /* ConfessionTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 		D0B0BA5B1E764442001BA126 = {
 			isa = PBXGroup;
 			children = (
@@ -148,11 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				D0B0BA671E764442001BA126 /* AppDelegate.swift */,
-				D0B0BA691E764442001BA126 /* ViewController.swift */,
-				D04F16E51E76519500377B17 /* Confession.swift */,
-				D02AA04B1E76539800786668 /* PopupViewController.swift */,
-				D02AA04D1E765BDE00786668 /* ConfessionMakerViewController.swift */,
-				D04F16DC1E764DD200377B17 /* ConfessionTableViewCell.swift */,
+				D02AA0501E79A85B00786668 /* Models */,
+				D02AA04F1E79A84B00786668 /* View Controllers */,
+				D02AA0511E79A86000786668 /* TableViewCells */,
 				D0B0BA6B1E764442001BA126 /* Main.storyboard */,
 				D0B0BA6E1E764442001BA126 /* Assets.xcassets */,
 				D0B0BA701E764442001BA126 /* LaunchScreen.storyboard */,

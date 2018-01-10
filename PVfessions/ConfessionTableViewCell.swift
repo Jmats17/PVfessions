@@ -12,5 +12,9 @@ import UIKit
 class ConfessionTableViewCell : UITableViewCell {
     @IBOutlet var storyTextLabel : UILabel!
     @IBOutlet var writtenByLabel : UILabel!
+    @IBOutlet var likedButton : UIButton!
+    @IBOutlet var numOfLikes : UILabel!
+    
+   
     
 }

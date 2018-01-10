@@ -18,7 +18,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var refreshControl: UIRefreshControl!
     var circle : Confession? = nil
     var ref : FIRDatabaseReference!
-
+    @IBOutlet var segmentedControl : UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -52,6 +53,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }) { (error : Error) in
             print(error)
         }
+    }
+    
+    
+    
+    @IBAction func segmentedControl(_ segmentedControl : UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            self.confessions = []
+            observingDB()
+            self.tableView.reloadData()
+        case 1:
+            self.confessions = []
+            observingDB()
+            self.tableView.reloadData()
+        default:
+            break
+        }
+        
+    }
+    
+    @IBAction func likeTapped(sender : UIButton) {
+        let hitPoint = sender.convert(CGPoint.zero , to: self.tableView)
+        let hitIndex = self.tableView.indexPathForRow(at: hitPoint)
+        
+       
     }
 
     func handleRefresh() {
@@ -90,5 +116,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return confessions.count
     }
+}
+
+extension UIImage {
+    
 }
 
